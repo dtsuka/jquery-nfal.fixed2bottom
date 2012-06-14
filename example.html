@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NFAL Fixed to Bottom  - jQuery Plugin</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery.nfal.fixed2bottom.js"></script>
+<script language="JavaScript" type="text/javascript">
+jQuery(function($){
+	$('#banner').fixed2bottom({
+		debugMode:true,
+		footerTarget:'#footer',
+		marginBottom:20,
+		liquidLayout:true
+	});
+});
+</script>
+<style type="text/css">
+body{
+	margin: 0;
+	padding: 0;
+}
+#wrap {
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+}
+#main {
+	width: 60%;
+	padding: 5%;
+	background: #CCDDDF;
+	float: left;
+	min-height: 800px;
+	margin-bottom:20px;
+}
+#main h1{
+	margin:0 0 40px 0;
+	padding:0;
+	text-shadow: 0 1px 1px #ffffff;
+	font: normal 55px/1 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: #222;
+}
+#main h2{
+	border-top:1px dotted #FFF;
+	margin-bottom:10px;
+	padding-top:10px;
+}
+pre{
+	border:1px solid #666;
+	background:#F0F0F0;
+	padding:10px;
+	line-height:1.4;
+	font-size:14px;
+}
+table{
+	border-collapse:collapse;
+}
+th,td{
+	border: 1px solid #666;
+	background:#DDEEF0;
+	padding: 7px;
+	font-size:12px;
+}
+#footer{
+    clear:both;
+    padding: 20px;
+    background: #CCC;
+}
+#side {
+	width: 20%;
+	float: right;
+	background: #CCC;
+	margin-bottom:20px;
+	position: relative;
+}
+#side h2{
+	text-align:center;
+}
+
+#menu {
+	width: 100%;
+	background: #E99;
+	overflow:hidden;
+}
+#menu li{
+	margin-bottom:20px;
+}
+#banner {
+	text-align: center;
+	background: #69C;
+	width: 100%;
+	padding: 50px 0;
+	margin: 0;
+}
+
+.f2t_scrolling {
+}
+.f2t_bottomEnd {
+}
+
+</style>
+</head>
+
+<body>
+<div id="wrap">
+	<div id="main">
+		<h1>NFAL Fixed to Bottom  - jQuery Plugin</h1>
+		<p>よくあるサイドメニューをスクロールに追従させる奴のウィンドウ下側にフィットさせるバージョンです。</p>
+		<p>ある程度はHTMLとCSSの設計を考える必要があるため、既存のサイトに設置するのは少々面倒かもしれません。</p>
+
+<pre>$('#banner').fixed2bottom();</pre>
+<p>フッターにかぶらないようにする場合</p>
+<pre>$('#banner').fixed2bottom({
+	footerTarget:'#footer',
+	marginBottom:20
+});</pre>
+		
+		<h2>options</h2>
+		<table>
+		<tr>
+			<th>Name</tH>
+			<th>デフォルト値</th>
+			<th>説明</th>
+		</tr>
+		<tr>
+			<td>debugMode</td>
+			<td>false</td>
+			<td>trueでデバッグモード</td>
+		</tr>
+		<tr>
+			<td>offsetTop</td>
+			<td>'auto'</td>
+			<td>対象エレメントを上から何ピクセルずらして表示するかの設定<br />
+				基本的にautoのままで使用</td>
+		</tr>
+		<tr>
+			<td>footerTarget</td>
+			<td>null</td>
+			<td>フッターに被せないようにする場合は、ここにフッターを指定<br />
+				例) footerTarget:'#footer'<br /></td>
+		</tr>
+		<tr>
+			<td>marginBottom</td>
+			<td>0</td>
+			<td>対象エレメントの下に空けるマージン値</td>
+		</tr>
+		<tr>
+			<td>liquidLayout</td>
+			<td>false</td>
+			<td>リキッドレイアウトか否かの設定</td>
+		</tr>
+		<tr>
+			<td>fixedClass</td>
+			<td>'f2t_scrolling'</td>
+			<td>スクロール中に追加されるクラス名（基本的には使いません）</td>
+		</tr>
+		<tr>
+			<td>absoluteClass</td>
+			<td>'f2t_bottomEnd'</td>
+			<td>下端までスクロールされた時に追加されるクラス名（基本的には使いません）</td>
+		</tr>
+		</table>
+		<h2>download</h2>
+		<p><a href="https://github.com/dtsuka/jquery-nfal.fixed2bottom">https://github.com/dtsuka/jquery-nfal.fixed2bottom</a></p>
+	</div>
+	<div id="side">
+		<h2>#side</h2>
+		<div id="menu">
+			<h3>menu</h3>
+			<ul>
+				<li>MENU1</li>
+				<li>MENU2</li>
+				<li>MENU3</li>
+				<li>MENU4</li>
+				<li>MENU5</li>
+				<li>MENU6</li>
+			</ul>
+		</div>
+		<p id="banner">#banner</p>
+	</div>
+	<div id="footer">
+		<h2>#footer</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Copyright © Near Future Arts Lab Co.,Ltd. All Rights Reserved.</p>
+	</div>
+</div>
+</body>
+</html>
