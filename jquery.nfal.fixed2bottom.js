@@ -42,12 +42,9 @@
 				footerHeight	= 0,
 				marginBtm		= opts.marginBottom,
 				liquid			= opts.liquidLayout,
-				defaBottom		= $this.css('bottom'),
 				defaWidth		= $this.width(),
 				pare			= $this.parent(),
 				pareWidth		= $this.parent().width();
-
-			debug('defaBottom:'+ $this.css('bottom'));
 
 			var footerHeightGet = function () {
 				footerOffsetTop	= $footer.offset().top;
@@ -73,7 +70,6 @@
 			if(offsetTop == 'auto'){
 				offsetTop = $this.offset().top;
 			}
-
 
 
 			var adjust = function(){
@@ -121,16 +117,6 @@
 						});
 					}
 				}
-				/*if($window.height() + $window.scrollTop() < offsetTop + $this.outerHeight(true) + fixedBottom){
-					//console.log('#A static');
-					$this.removeClass(fixedClass).removeClass(absoluteClass);
-				}else if($window.height() + $window.scrollTop() > $document.height() - marginBtm -  fixedBottom - absoluteBottom){
-					//console.log('#B absolute');
-					$this.removeClass(fixedClass).addClass(absoluteClass);
-				}else {
-					//console.log('#C fixed');
-					$this.addClass(fixedClass).removeClass(absoluteClass);
-				}*/
 			};
 			adjust();
 			$window.bind('scroll resize', adjust);
