@@ -2,23 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>NFAL Fixed to Bottom  - jQuery Plugin</title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="jquery.nfal.fixed2bottom.js"></script>
-<script language="JavaScript" type="text/javascript">
-jQuery(function($){
-	$('#banner').fixed2bottom({
-		debugMode:true,
-		footerTarget:'#footer',
-		marginBottom:20,
-		liquidLayout:true
-	});
-});
-</script>
+<title>NFAL Fixed to Bottom - jQuery Plugin</title>
+<meta name="description" content="サイドメニューをスクロールに追従させるjQueryプラグインの”ウィンドウ下部”にフィットさせるバージョンです。">
 <style type="text/css">
 body{
 	margin: 0;
 	padding: 0;
+	font: 16px/1.4 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+a{
+	color: #222;
 }
 #wrap {
 	width: 80%;
@@ -26,8 +19,8 @@ body{
 	position: relative;
 }
 #main {
-	width: 60%;
-	padding: 5%;
+	width: 65%;
+	padding: 40px 5%;
 	background: #CCDDDF;
 	float: left;
 	min-height: 800px;
@@ -36,30 +29,35 @@ body{
 #main h1{
 	margin:0 0 40px 0;
 	padding:0;
-	text-shadow: 0 1px 1px #ffffff;
-	font: normal 55px/1 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-size:60px;
+	font-weight:normal;
+	line-height:1;
 	color: #222;
+	font-family: 'Raleway', sans-serif;
 }
 #main h2{
 	border-top:1px dotted #FFF;
 	margin-bottom:10px;
 	padding-top:10px;
+	font-weight:normal;
+	font-size:30px;	font-family: 'Raleway', sans-serif;
 }
 pre{
 	border:1px solid #666;
-	background:#F0F0F0;
+	background:rgba(255,255,255,0.8);
 	padding:10px;
 	line-height:1.4;
 	font-size:14px;
+	clear: both;
 }
 table{
 	border-collapse:collapse;
 }
 th,td{
 	border: 1px solid #666;
-	background:#DDEEF0;
+	background:rgba(255,255,255,0.8);
 	padding: 7px;
-	font-size:12px;
+	font-size:14px;
 }
 #footer{
     clear:both;
@@ -96,13 +94,14 @@ th,td{
 }
 
 </style>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:300" />
 </head>
 
 <body>
 <div id="wrap">
 	<div id="main">
 		<h1>NFAL Fixed to Bottom  - jQuery Plugin</h1>
-		<p>よくあるサイドメニューをスクロールに追従させる奴の<strong>ウィンドウ下部にフィット</strong>させるバージョンです。</p>
+		<p>よくあるサイドメニューをスクロールに追従させるプラグインの<strong>ウィンドウ下部にフィット</strong>させるバージョンです。</p>
 		<p>ある程度はHTMLとCSSの設計を考える必要があるため、既存のサイトに設置するのは少々面倒かもしれません。</p>
 
 <pre>$('#banner').fixed2bottom();</pre>
@@ -112,7 +111,7 @@ th,td{
 	marginBottom:20
 });</pre>
 		
-		<h2>options</h2>
+		<h2>Options</h2>
 		<table>
 		<tr>
 			<th>Name</tH>
@@ -157,7 +156,7 @@ th,td{
 			<td>下端までスクロールされた時に追加されるクラス名（基本的には使いません）</td>
 		</tr>
 		</table>
-		<h2>download</h2>
+		<h2>Download</h2>
 		<p><a href="https://github.com/dtsuka/jquery-nfal.fixed2bottom">https://github.com/dtsuka/jquery-nfal.fixed2bottom</a></p>
 	</div>
 	<div id="side">
@@ -176,8 +175,33 @@ th,td{
 	<div id="footer">
 		<h2>#footer</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<p>Copyright © Near Future Arts Lab Co.,Ltd. All Rights Reserved.</p>
+		<p><a href="http://www.kinbi.net">Copyright © Near Future Arts Lab Co.,Ltd. All Rights Reserved.</a></p>
 	</div>
 </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="jquery.nfal.fixed2bottom.js"></script>
+<script language="JavaScript" type="text/javascript">
+jQuery(function($){
+	$('#banner').fixed2bottom({
+		debugMode:true,
+		footerTarget:'#footer',
+		marginBottom:20,
+		liquidLayout:true
+	});
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-683156-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </body>
 </html>
